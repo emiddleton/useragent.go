@@ -1,0 +1,1221 @@
+application_types:
+  webmail: "Webmail client"
+  unknown: "unknown"
+
+manufacturers:
+  other:
+    id: 1
+    name: "Other"
+  microsoft:
+    id: 2
+    name: "Microsoft Corporation"
+  apple:
+    id: 3
+    name: "Apple Inc."
+  sun:
+    id: 4
+    name: "Sun Microsystems, Inc."
+  symbian:
+    id: 5
+    name: "Symbian Ltd."
+  nokia:
+    id: 6
+    name: "Nokia Corporation"
+  blackberry:
+    id: 7
+    name: "Research In Motion Limited"
+  hp:
+    id: 8
+    name: "Hewlet Packard"
+  sony_ericsson:
+    id: 9
+    name: "Sony Ericsson Mobile Communications AB"
+  samsung:
+    id: 20
+    name: "Samsung Electronics"
+  sony:
+    id: 10
+    name: "Sony Computer Entertainment, Inc."
+  nintendo:
+    id: 11
+    name: "Nintendo"
+  opera:
+    id: 12
+    name: "Opera Software ASA"
+  mozilla:
+    id: 13
+    name: "Mozilla Foundation"
+  google:
+    id: 15
+    name: "Google Inc."
+  compuserve:
+    id: 16
+    name: "CompuServe Interactive Services, Inc."
+  yahoo:
+    id: 17
+    name: "Yahoo Inc."
+  aol:
+    id: 18
+    name: "AOL LLC."
+  mmc:
+    id: 19
+    name: "Mail.com Media Corporation"
+  amazon:
+    id: 20
+    name: "Amazon.com, Inc."
+  roku:
+    id: 21
+    name: "Roku, Inc."
+  adobe:
+    id: 23
+    name: "Adobe Systems Inc."
+
+applications:
+  hotmail:
+    id: 1
+    name: "Windows Live Hotmail"
+    aliases:
+      - "mail.live.com"
+      - "hotmail.msn"
+    application_type: :webmail
+    manufacturer: :microsoft
+  gmail:
+    id: 5
+    name: "Gmail"
+    aliases:
+      - "mail.google.com"
+    application_type: :webmail
+    manufacturer: :google
+  yahoo_mail:
+    id: 10
+    name: "Yahoo Mail"
+    aliases:
+      - "mail.yahoo.com"
+    application_type: :webmail
+    manufacturer: :yahoo
+  compuserve:
+    id: 20
+    name: "Compuserve"
+    aliases:
+      - "csmail.compuserve.com"
+    application_type: :webmail
+    manufacturer: :compuserve
+  aol_webmail:
+    id: 30
+    name: "AOL webmail"
+    aliases:
+      - "webmail.aol.com"
+    application_type: :webmail
+    manufacturer: :aol
+  mobileme:
+    id: 40
+    name: "MobileMe"
+    aliases:
+      - "www.me.com"
+    application_type: :webmail
+    manufacturer: :apple
+  mail_com:
+    id: 50
+    name: "Mail.com"
+    aliases:
+      - ".mail.com"
+    application_type: :webmail
+    manufacturer: :mmc
+  horde:
+    id: 50
+    name: "horde"
+    aliases:
+      - "horde"
+    application_type: :webmail
+    manufacturer: :other
+  other_webmail:
+    id: 60
+    name: "Other webmail client"
+    aliases:
+      - "webmail"
+      - "webemail"
+    application_type: :webmail
+    manufacturer: :other
+  unknown:
+    id: 0
+    name: "Unknown"
+    aliases: []
+    application_type: :unknown
+    manufacturer: :other
+
+device_types:
+  computer: "Computer"          # Standard desktop or laptop computer
+  mobile: "Mobile"              # Mobile phone or similar small mobile device
+  tablet: "Tablet"              # Small tablet type computer.
+  game_console: "Game console"  # Game console like the Wii or Playstation.
+  dmr: "Digital media receiver" # Digital media receiver like the Google TV.
+  unknown: "Unknown"            # Other or unknow type of device.
+
+browser_types:
+  web_browser: "Browser"
+  mobile_browser: "Browser (mobile)"
+  text_browser: "Browser (text only)"
+  email_client: "Email Client"
+  robot: "Robot"
+  tool: "Downloading tool"
+  app: "Application"
+  unknown: "unknown"
+
+rendering_engines:
+  trident: "Trident"
+  word: "Microsoft Office Word"
+  gecko: "Gecko"
+  webkit: "WebKit"
+  presto: "Presto"
+  mozilla: "Mozilla"
+  khtml: "KHTML"
+  other: "Other"
+
+browsers:
+  opera:
+    id: 1
+    name: "Opera"
+    aliases:
+      - "Opera"
+    browser_type: :web_browser
+    manufacturer: :opera
+    rendering_engine: :presto
+    version_regex: "Opera\\/(([\\d]+)\\.([\\w]+))"
+    children:
+      opera_mini:
+        id: 20
+        name: "Opera Mini"
+        aliases:
+          - "Opera Mini"
+        browser_type: :mobile_browser
+      opera10:
+        id: 10
+        name: "Opera 10"
+        aliases:
+          - "Opera/9.8"
+        version_regex: "Version\\/(([\\d]+)\\.([\\w]+))"
+      opera9:
+        id: 5
+        name: "Opera 9"
+        aliases:
+          - "Opera/9"
+  konqueror:
+    id: 1
+    name: "Konqueror"
+    aliases:
+      - "Konqueror"
+    browser_type: :web_browser
+    manufacturer: :other
+    rendering_engine: :khtml
+    version_regex: "Konqueror\\/(([0-9]+)\\.?([\\w]+)?(-[\\w]+)?)"
+  outlook:
+    id: 100
+    name: "Outlook"
+    aliases:
+      - "MSOffice"
+    browser_type: :email_client
+    manufacturer: :microsoft
+    rendering_engine: :word
+    version_regex: "MSOffice (([0-9]+))"
+    children:
+      outlook2007:
+        id: 107
+        name: "Outlook 2007"
+        aliases:
+          - "MSOffice 12"
+      outlook2010:
+        id: 108
+        name: "Outlook 2010"
+        aliases:
+          - "MSOffice 14"
+  ie:
+    id: 1
+    name: "Internet Explorer"
+    aliases:
+      - "MSIE"
+    exclude_list:
+      - "360Spider"
+    browser_type: :web_browser
+    manufacturer: :microsoft
+    rendering_engine: :trident
+    version_regex: "MSIE (([\\d]+)\\.([\\w]+))"
+    children:
+      outlook_express7:
+        id: 110
+        name: "Windows Live Mail"
+        aliases:
+          - "Outlook-Express/7.0"
+        browser_type: :email_client
+      iemobile9:
+        id: 123
+        name: "IE Mobile 9"
+        aliases:
+          - "IEMobile/9"
+        browser_type: :mobile_browser
+      iemobile7:
+        id: 121
+        name: "IE Mobile 7"
+        aliases:
+          - "IEMobile 7"
+        browser_type: :mobile_browser
+      iemobile6:
+        id: 120
+        name: "IE Mobile 6"
+        aliases:
+          - "IEMobile 6"
+        browser_type: :mobile_browser
+      ie10:
+        id: 92
+        name: "Internet Explorer 10"
+        aliases:
+          - "MSIE 10"
+      ie9:
+        id: 90
+        name: "Internet Explorer 9"
+        aliases:
+          - "MSIE 9"
+      ie8:
+        id: 80
+        name: "Internet Explorer 8"
+        aliases:
+          - "MSIE 8"
+        exclude_list:
+          - "360Spider"
+      ie7:
+        id: 70
+        name: "Internet Explorer 7"
+        aliases:
+          - "MSIE 7"
+      ie6:
+        id: 60
+        name: "Internet Explorer 6"
+        aliases:
+          - "MSIE 6"
+      ie5_5:
+        id: 55
+        name: "Internet Explorer 5.5"
+        aliases:
+          - "MSIE 5.5"
+      ie5:
+        id: 50
+        name: "Internet Explorer 5"
+        aliases:
+          - "MSIE 5"
+  chrome:
+    id: 1
+    name: "Chrome"
+    aliases:
+      - "Chrome"
+    exclude_list:
+      - "Web Preview"
+    browser_type: :web_browser
+    manufacturer: :google
+    rendering_engine: :webkit
+    version_regex: "Chrome\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)"
+    children:
+      chrome24:
+        id: 29
+        name: "Chrome 24"
+        aliases:
+          - "Chrome/24"
+        exclude_list:
+          - "Web Preview"
+      chrome23:
+        id: 28
+        name: "Chrome 23"
+        aliases:
+          - "Chrome/23"
+        exclude_list:
+          - "Web Preview"
+      chrome22:
+        id: 27
+        name: "Chrome 22"
+        aliases:
+          - "Chrome/22"
+        exclude_list:
+          - "Web Preview"
+      chrome21:
+        id: 26
+        name: "Chrome 21"
+        aliases:
+          - "Chrome/21"
+        exclude_list:
+          - "Web Preview"
+      chrome20:
+        id: 25
+        name: "Chrome 20"
+        aliases:
+          - "Chrome/20"
+        exclude_list:
+          - "Web Preview"
+      chrome19:
+        id: 24
+        name: "Chrome 19"
+        aliases:
+          - "Chrome/19"
+        exclude_list:
+          - "Web Preview"
+      chrome18:
+        id: 23
+        name: "Chrome 18"
+        aliases:
+          - "Chrome/18"
+      chrome17:
+        id: 22
+        name: "Chrome 17"
+        aliases:
+          - "Chrome/17"
+      chrome16:
+        id: 21
+        name: "Chrome 16"
+        aliases:
+          - "Chrome/16"
+      chrome15:
+        id: 20
+        name: "Chrome 15"
+        aliases:
+          - "Chrome/15"
+      chrome14:
+        id: 19
+        name: "Chrome 14"
+        aliases:
+          - "Chrome/14"
+      chrome13:
+        id: 18
+        name: "Chrome 13"
+        aliases:
+          - "Chrome/13"
+      chrome12:
+        id: 17
+        name: "Chrome 12"
+        aliases:
+          - "Chrome/12"
+      chrome11:
+        id: 16
+        name: "Chrome 11"
+        aliases:
+          - "Chrome/11"
+      chrome10:
+        id: 15
+        name: "Chrome 10"
+        aliases:
+          - "Chrome/10"
+      chrome9:
+        id: 10
+        name: "Chrome 9"
+        aliases:
+          - "Chrome/9"
+      chrome8:
+        id: 5
+        name: "Chrome 8"
+        aliases:
+          - "Chrome/8"
+  omniweb:
+    id: 2
+    name: "Omniweb"
+    aliases:
+      - "OmniWeb"
+    browser_type: :web_browser
+    manufacturer: :other
+    render_engine: :webkit
+  safari:
+    id: 1
+    name: "Safari"
+    aliases:
+      - "Safari"
+    exclude_list:
+      - "Web Preview"
+    browser_type: :web_browser
+    manufacturer: :apple
+    render_engine: :webkit
+    version_regex: "Version\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)"
+    children:
+      chrome_mobile:
+        id: 100
+        name: "Chrome Mobile"
+        aliases:
+          - "CrMo"
+          - "CriOS"
+        browser_type: :mobile_browser
+        manufacturer: :google
+        version_regex: "CrMo\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)"
+      mobile_safari:
+        id: 2
+        name: "Mobile Safari"
+        aliases:
+          - "Mobile Safari"
+          - "Mobile/"
+        browser_type: :mobile_browser
+      silk:
+        id: 15
+        name: "Silk"
+        aliases:
+          - "Silk/"
+        manufacturer: :amazon
+        version_regex: "Silk\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\-[\\w]+)?)"
+      safari5:
+        id: 3
+        name: "Safari 5"
+        aliases:
+          - "Version/5"
+      safari4:
+        id: 4
+        name: "Safari 4"
+        aliases:
+          - "Version/4"
+  dolfin2:
+    id: 1
+    name: "Samsung Dolphin 2"
+    aliases:
+      - "Dolfin/2"
+    browser_type: :mobile_browser
+    manufacturer: :samsung
+    render_engine: :webkit
+  apple_web_kit:
+    id: 50
+    name: "Apple WebKit"
+    aliases:
+      - "AppleWebKit"
+    exclude_list:
+      - "Web Preview"
+    browser_type: :web_browser
+    manufacturer: :apple
+    render_engine: :webkit
+    children:
+      apple_itunes:
+        id: 52
+        name: "iTunes"
+        aliases:
+          - "iTunes"
+        browser_type: :app
+      apple_appstore:
+        id: 53
+        name: "App Store"
+        aliases:
+          - "MacAppStore"
+        browser_type: :app
+      adobe_air:
+        id: 53
+        name: "Adobe AIR application"
+        aliases:
+          - "AdobeAIR"
+        browser_type: :app
+  lotus_notes:
+    id: 3
+    name: "Lotus Notes"
+    aliases:
+      - "Lotus-Notes"
+    browser_type: :email_client
+    manufacturer: :other
+    render_engine: :other
+    version_regex: "Lotus-Notes\\/(([\\d]+)\\.([\\w]+))"
+  thunderbird:
+    id: 110
+    name: "Thunderbird"
+    aliases:
+      - "Thunderbird"
+    browser_type: :email_client
+    manufacturer: :mozilla
+    render_engine: :gecko
+    version_regex: "Thunderbird\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)"
+    children:
+      thunderbird12:
+        id: 185
+        name: "Thunderbird 12"
+        aliases:
+          - "Thunderbird/12"
+      thunderbird11:
+        id: 184
+        name: "Thunderbird 11"
+        aliases:
+          - "Thunderbird/11"
+      thunderbird10:
+        id: 183
+        name: "Thunderbird 10"
+        aliases:
+          - "Thunderbird/10"
+      thunderbird8:
+        id: 180
+        name: "Thunderbird 8"
+        aliases:
+          - "Thunderbird/8"
+      thunderbird7:
+        id: 170
+        name: "Thunderbird 7"
+        aliases:
+          - "Thunderbird/7"
+      thunderbird6:
+        id: 160
+        name: "Thunderbird 6"
+        aliases:
+          - "Thunderbird/6"
+      thunderbird3:
+        id: 130
+        name: "Thunderbird 3"
+        aliases:
+          - "Thunderbird/3"
+      thunderbird2:
+        id: 120
+        name: "Thunderbird 2"
+        aliases:
+          - "Thunderbird/2"
+  camino:
+    id: 5
+    name: "Camino"
+    aliases:
+      - "Camino"
+    browser_type: :web_browser
+    manufacturer: :other
+    rendering_engine: :gecko
+    version_regex: "Camino\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)"
+    children:
+      camino2:
+        id: 17
+        name: "Camino 2"
+        aliases:
+          - "Camino/2"
+  flock:
+    id: 4
+    name: "Flock"
+    aliases:
+      - "Flock"
+    browser_type: :web_browser
+    manufacturer: :other
+    rendering_engine: :gecko
+    version_regex: "Flock\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)"
+  firefox:
+    id: 10
+    name: "Firefox"
+    aliases:
+      - "Firefox"
+    browser_type: :web_browser
+    manufacturer: :mozilla
+    rendering_engine: :gecko
+    version_regex: "Firefox\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)"
+    children:
+      firefox3mobile:
+        id: 31
+        name: "Firefox 3 Mobile"
+        aliases:
+          - "Firefox/3.5 Maemo"
+        browser_type: :mobile_browser
+      firefox22:
+        id: 103
+        name: "Firefox 22"
+        aliases:
+          - "Firefox/22"
+      firefox21:
+        id: 102
+        name: "Firefox 21"
+        aliases:
+          - "Firefox/21"
+      firefox20:
+        id: 101
+        name: "Firefox 20"
+        aliases:
+          - "Firefox/20"
+      firefox19:
+        id: 100
+        name: "Firefox 19"
+        aliases:
+          - "Firefox/19"
+      firefox18:
+        id: 99
+        name: "Firefox 18"
+        aliases:
+          - "Firefox/18"
+      firefox17:
+        id: 98
+        name: "Firefox 17"
+        aliases:
+          - "Firefox/17"
+      firefox16:
+        id: 97
+        name: "Firefox 16"
+        aliases:
+          - "Firefox/16"
+      firefox15:
+        id: 96
+        name: "Firefox 15"
+        aliases:
+          - "Firefox/15"
+      firefox14:
+        id: 95
+        name: "Firefox 14"
+        aliases:
+          - "Firefox/14"
+      firefox13:
+        id: 94
+        name: "Firefox 13"
+        aliases:
+          - "Firefox/13"
+      firefox12:
+        id: 93
+        name: "Firefox 12"
+        aliases:
+          - "Firefox/12"
+      firefox11:
+        id: 92
+        name: "Firefox 11"
+        aliases:
+          - "Firefox/11"
+      firefox10:
+        id: 91
+        name: "Firefox 10"
+        aliases:
+          - "Firefox/10"
+      firefox9:
+        id: 90
+        name: "Firefox 9"
+        aliases:
+          - "Firefox/9"
+      firefox8:
+        id: 80
+        name: "Firefox 8"
+        aliases:
+          - "Firefox/8"
+      firefox7:
+        id: 70
+        name: "Firefox 7"
+        aliases:
+          - "Firefox/7"
+      firefox6:
+        id: 60
+        name: "Firefox 6"
+        aliases:
+          - "Firefox/6"
+      firefox5:
+        id: 50
+        name: "Firefox 5"
+        aliases:
+          - "Firefox/5"
+      firefox4:
+        id: 40
+        name: "Firefox 4"
+        aliases:
+          - "Firefox/4"
+      firefox3:
+        id: 30
+        name: "Firefox 3"
+        aliases:
+          - "Firefox/3"
+      firefox2:
+        id: 20
+        name: "Firefox 2"
+        aliases:
+          - "Firefox/2"
+      firefox1_5:
+        id: 15
+        name: "Firefox 1.5"
+        aliases:
+          - "Firefox/1.5"
+  seamonkey:
+    id: 15
+    name: "SeaMonkey"
+    aliases:
+      - "SeaMonkey"
+    browser_type: :web_browser
+    manufacturer: :other
+    rendering_engine: :gecko
+    version_regex: "SeaMonkey\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)"
+  bot:
+    id: 12
+    name: "Robot/Spider"
+    aliases:
+      - "Googlebot"
+      - "Web Preview"
+      - "bot"
+      - "spider"
+      - "crawler"
+      - "Feedfetcher"
+      - "Slurp"
+      - "Twiceler"
+      - "Nutch"
+      - "BecomeBot"
+    browser_type: :robot
+    manufacturer: :other
+    rendering_engine: :other
+  mozilla:
+    id: 1
+    name: "Mozilla"
+    aliases:
+      - "Mozilla"
+      - "Moozilla"
+    browser_type: :web_browser
+    manufacturer: :mozilla
+    rendering_engine: :other
+  cfnetwork:
+    id: 6
+    name: "CFNetwork"
+    aliases:
+      - "CFNetwork"
+    browser_type: :unknown
+    manufacturer: :other
+    rendering_engine: :other
+  eudora:
+    id: 7
+    name: "Eudora"
+    aliases:
+      - "Eudora"
+      - "EUDORA"
+    browser_type: :email_client
+    manufacturer: :other
+    rendering_engine: :other
+  pocomail:
+    id: 8
+    name: "PocoMail"
+    aliases:
+      - "PocoMail"
+    browser_type: :email_client
+    manufacturer: :other
+    rendering_engine: :other
+  thebat:
+    id: 9
+    name: "The Bat!"
+    aliases:
+      - "The Bat"
+    browser_type: :email_client
+    manufacturer: :other
+    rendering_engine: :other
+  netfront:
+    id: 10
+    name: "NetFront"
+    aliases:
+      - "NetFront"
+    browser_type: :mobile_browser
+    manufacturer: :other
+    rendering_engine: :other
+  evolution:
+    id: 11
+    name: "Evolution"
+    aliases:
+      - "CamelHttpStream"
+    browser_type: :email_client
+    manufacturer: :other
+    rendering_engine: :other
+  lynx:
+    id: 13
+    name: "Lynx"
+    aliases:
+      - "Lynx"
+    browser_type: :text_browser
+    manufacturer: :other
+    rendering_engine: :other
+    version_regex: "Lynx\\/(([0-9]+)\\.([\\d]+)\\.?([\\w\\-\\+]+)?\\.?([\\w\\-\\+]+)?)"
+  download:
+    id: 16
+    name: "Downloading Tool"
+    aliases:
+      - "cURL"
+      - "wget"
+    browser_type: :text_browser
+    manufacturer: :other
+    rendering_engine: :other
+  unknown:
+    id: 14
+    name: "Unknown"
+    aliases: []
+    browser_type: :unknown
+    manufacturer: :other
+    rendering_engine: :other
+
+operating_systems:
+  windows:
+    id: 1
+    name: "Windows"
+    aliases:
+      - "Windows"
+    exclude_list:
+      - "Palm"
+    manufacturer: :microsoft
+    device_type: :computer
+    children:
+      windows_8:
+        id: 22
+        name: "Windows 8"
+        aliases:
+          - "Windows NT 6.2"
+      windows_7:
+        id: 21
+        name: "Windows 7"
+        aliases:
+          - "Windows NT 6.1"
+      windows_vista:
+        id: 20
+        name: "Windows Vista"
+        aliases:
+          - "Windows NT 6"
+      windows_2000:
+        id: 15
+        name: "Windows 2000"
+        aliases:
+          - "Windows NT 5.0"
+      windows_xp:
+        id: 10
+        name: "Windows XP"
+        aliases:
+          - "Windows NT 5"
+      windows_phone8:
+        id: 52
+        name: "Windows Phone 8"
+        aliases:
+          - "Windows Phone 8"
+        device_type: :mobile
+      windows_mobile7:
+        id: 51
+        name: "Windows Mobile 7"
+        aliases:
+          - "Windows Phone OS 7"
+        device_type: :mobile
+      windows_mobile:
+        id: 50
+        name: "Windows Mobile"
+        aliases:
+          - "Windows CE"
+        device_type: :mobile
+      windows_98:
+        id: 5
+        name: "Windows 98"
+        aliases:
+          - "Windows 98"
+          - "Win98"
+        exclude_list:
+          - "Palm"
+  android:
+    id: 4
+    name: "Android"
+    aliases:
+      - "Android"
+    # kindle fire doesn't display android name when in desktop silk mode
+      - "Silk-Accelerated"
+      - "KFOT"
+      - "KFTT"
+      - "KFJWI"
+      - "KFJWA"
+    manufacturer: :google
+    device_type: :mobile
+    children:
+      android4:
+        id: 4
+        name: "Android 4.x"
+        aliases:
+          - "Android 4"
+          - "Android-4"
+        # kindle fire doesn't display android name when in desktop silk mode
+          - "KFOT"
+          - "KFTT"
+          - "KFJWI"
+          - "KFJWA"
+        children:
+          android4_tablet:
+            id: 40
+            name: "Android 4.x Tablet"
+            aliases:
+              - "Android 4"
+              - "Android-4"
+            exclude_list:
+              - "mobile"
+              - "KFOT"
+              - "KFTT"
+              - "KFJWI"
+              - "KFJWA"
+            device_type: :tablet
+          android4_fire:
+            id: 41
+            name: "Android 4.x Tablet (kindle fire)"
+            aliases:
+              - "KFOT"
+              - "KFTT"
+              - "KFJWI"
+              - "KFJWA"
+            device_type: :tablet
+      android3_tablet:
+        id: 30
+        name: "Android 3.x Tablet"
+        aliases:
+          - "Android 3"
+        device_type: :tablet
+      android2:
+        id: 2
+        name: "Android 2.x"
+        aliases:
+          - "Android 2"
+          - "Silk-Accelerated"
+        children:
+          android2_tablet:
+            id: 20
+            name: "Android 2.x Tablet"
+            aliases:
+              - "GT-P1000"
+              - "SCH-I800"
+              - "Kindle Fire"
+              - "Silk-Accelerated"
+            device_type: :tablet
+      android1:
+        id: 1
+        name: "Android 1.x"
+        aliases:
+          - "Android 1"
+  webos:
+    id: 11
+    name: "WebOS"
+    aliases:
+      - "webOS"
+    device_type: :mobile
+    manufacturer: :hp
+  palm:
+    id: 10
+    name: "PalmOS"
+    aliases:
+      - "Palm"
+    device_type: :mobile
+    manufacturer: :hp
+  meego:
+    id: 3
+    name: "MeeGo"
+    aliases:
+      - "MeeGo"
+    device_type: :mobile
+    manufacturer: :nokia
+  ios:
+    id: 2
+    name: "iOS"
+    aliases:
+      - "iPhone OS"
+      - "like Mac OS X"
+    device_type: :mobile
+    manufacturer: :apple
+    children:
+      ios6_iphone:
+        id: 43
+        name: "iOS 6 (iPhone)"
+        aliases:
+          - "iPhone OS 6"
+      ios5_iphone:
+        id: 42
+        name: "iOS 5 (iPhone)"
+        aliases:
+          - "iPhone OS 5"
+      ios4_iphone:
+        id: 41
+        name: "iOS 4 (iPhone)"
+        aliases:
+          - "iPhone OS 4"
+      mac_os_x_ipad:
+        id: 50
+        name: "Mac OS X (iPad)"
+        aliases:
+          - "iPad"
+        device_type: :tablet
+      mac_os_x_iphone:
+        id: 40
+        name: "Mac OS X (iPhone)"
+        aliases:
+          - "iPhone"
+      mac_os_x_ipod:
+        id: 30
+        name: "Mac OS X (iPod)"
+        aliases:
+          - "iPod"
+  mac_os_x:
+    id: 10
+    name: "Mac OS X"
+    aliases:
+      - "Mac OS X"
+      - "CFNetwork"
+    device_type: :computer
+    manufacturer: :apple
+  mac_os:
+    id: 1
+    name: "Mac OS"
+    aliases:
+      - "Mac"
+    device_type: :computer
+    manufacturer: :apple
+  maemo:
+    id: 2
+    name: "Maemo"
+    aliases:
+      - "Maemo"
+    device_type: :mobile
+    manufacturer: :nokia
+  bada:
+    id: 2
+    name: "Bada"
+    aliases:
+      - "Bada"
+    device_type: :mobile
+    manufacturer: :samsung
+  google_tv:
+    id: 100
+    name: "Android (Google TV)"
+    aliases:
+      - "GoogleTV"
+    device_type: :dmr
+    manufacturer: :google
+  kindle:
+    id: 1
+    name: "Linux (Kindle)"
+    aliases:
+      - "Kindle"
+    device_type: :tablet
+    manufacturer: :amazon
+    children:
+      kindle3:
+        id: 30
+        name: "Linux (Kindle 3)"
+        aliases:
+          - "Kindle/3"
+      kindle2:
+        id: 20
+        name: "Linux (Kindle 2)"
+        aliases:
+          - "Kindle/2"
+  #kindle_fire1:
+  #  id: 1
+  #  name: "Kindle Fire (1st Generation)"
+  #  aliases:
+  #    - "Kindle"
+  #  device_type: :tablet
+  #  manufacturer: :amazon
+  #kindle_fire2:
+  #  id: 2
+  #  name: "Kindle Fire (2nd Generation)"
+  #  aliases:
+  #    - "KFOT Build/IML74K"
+  #  device_type: :tablet
+  #  manufacturer: :amazon
+  #kindle_fire_hd7:
+  #  id: 7
+  #  name: "Kindle Fire HD 7"
+  #  aliases:
+  #    - "KFTT Build/IML74K"
+  #  device_type: :tablet
+  #  manufacturer: :amazon
+  #kindle_fire_hd8_9_wifi:
+  #  id: 8
+  #  name: "Kindle Fire HD 8.9 Wi-Fi"
+  #  aliases:
+  #    - "KFJWI Build/IML74K"
+  #  device_type: :tablet
+  #  manufacturer: :amazon
+  #kindle_fire_hd8_9_wan:
+  #  id: 89
+  #  name: "Kindle Fire HD 8.9 Wan"
+  #  aliases:
+  #    - "KFJWA Build/IML74K"
+  #  device_type: :tablet
+  #  manufacturer: :amazon
+  linux:
+    id: 2
+    name: "Linux"
+    aliases:
+      - "Linux"
+      - "CamelHttpStream"
+    device_type: :computer
+    manufacturer: :other
+  symbian:
+    id: 1
+    name: "Symbian OS"
+    aliases:
+      - "Symbian"
+      - "Series60"
+    device_type: :mobile
+    manufacturer: :symbian
+    children:
+      symbian9:
+        id: 20
+        name: "Symbian OS 9.x"
+        aliases:
+          - "SymbianOS/9"
+          - "Series60/3"
+      symbian8:
+        id: 15
+        name: "Symbian OS 8.x"
+        aliases:
+          - "SymbianOS/8"
+          - "Series60/2.6"
+          - "Series60/2.8"
+      symbian7:
+        id: 10
+        name: "Symbian OS 7.x"
+        aliases:
+          - "SymbianOS/7"
+      symbian6:
+        id: 5
+        name: "Symbian OS 6.x"
+        aliases:
+          - "SymbianOS/6"
+  series40:
+    id: 1
+    name: "Series 40"
+    aliases:
+      - "Nokia6300"
+    device_type: :mobile
+    manufacturer: :nokia
+  sony_ericsson:
+    id: 1
+    name: "Sony Ericsson"
+    aliases:
+      - "SonyEricsson"
+    device_type: :mobile
+    manufacturer: :sony_ericsson
+  sun_os:
+    id: 1
+    name: "SunOS"
+    aliases:
+      - "SunOS"
+    device_type: :computer
+    manufacturer: :sun
+  psp:
+    id: 1
+    name: "Sony Playstation"
+    aliases:
+      - "Playstation"
+    device_type: :game_console
+    manufacturer: :sony
+  wii:
+    id: 1
+    name: "Nintendo Wii"
+    aliases:
+      - "Wii"
+    device_type: :game_console
+    manufacturer: :nintendo
+  blackberry:
+    id: 1
+    name: "BlackBerryOS"
+    aliases:
+      - "BlackBerry"
+    device_type: :mobile
+    manufacturer: :blackberry
+    children:
+      blackberry7:
+        id: 7
+        name: "BlackBerry 7"
+        aliases:
+          - "Version/7"
+      blackberry6:
+        id: 6
+        name: "BlackBerry 6"
+        aliases:
+          - "Version/6"
+  blackberry_tablet:
+    id: 100
+    name: "BlackBerry Tablet OS"
+    aliases:
+      - "RIM Tablet OS"
+    device_type: :tablet
+    manufacturer: blackberry
+  roku:
+    id: 1
+    name: "Roku OS"
+    aliases:
+      - "Roku"
+    device_type: :dmr
+    manufacturer: :roku
+  unknown:
+    id: 1
+    name: "Unknown"
+    aliases: []
+    device_type: :unknown
+    manufacturer: :other
