@@ -86,6 +86,14 @@ type OperatingSystem struct {
 	children        []OperatingSystem
 }
 
+func (b Browser)Group()(g Browser){
+	if b.parent != nil {
+		return *b.parent
+	} else {
+		return b
+	}
+}
+
 func (b Browser)BrowserType()(bt BrowserType){
 	if b.browserType == "" && b.parent != nil{
 		return b.parent.BrowserType()
@@ -234,6 +242,14 @@ func (os OperatingSystem)DeviceType()(dt DeviceType){
 		return os.parent.DeviceType()
 	} else {
 		return device_types[os.deviceType]
+	}
+}
+
+func (os OperatingSystem)Group()(g OperatingSystem){
+	if os.parent != nil {
+		return *os.parent
+	} else {
+		return os
 	}
 }
 
