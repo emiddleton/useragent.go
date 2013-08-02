@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	file = flag.String("file", "./useragent.yml", "Useragent data")
+	useragent_yml_file = flag.String("useragent_yml", "./useragent.yml", "Useragent data")
 	application_types        = map[string]ApplicationType{}
 	device_types             = map[string]DeviceType{}
 	rendering_engines        = map[string]RenderingEngine{}
@@ -327,9 +327,9 @@ func initOperatingSystem(parent *OperatingSystem, operating_system_key string, o
 }
 
 func init() {
-	fileReader,err := os.Open(*file)
+	fileReader,err := os.Open(*useragent_yml_file)
 	if err != nil {
-		log.Fatalf("os.Open(%q): %s", *file, err)
+		log.Fatalf("os.Open(%q): %s", *useragent_yml_file, err)
 	}
 	yamlParser := parser.New(fileReader,data.CoreSchema,data.DefaultConstructor,nil)
 	doc, err := yamlParser.ParseDocument()

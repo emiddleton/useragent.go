@@ -48,7 +48,7 @@ type OperatingSystemParse struct {
 func init() {
 	fileReader,err := os.Open("useragent_test.yml")
 	if err != nil {
-		log.Fatalf("os.Open(%q): %s", *file, err)
+		log.Fatalf("os.Open(%q): %s", "useragent_test.yml", err)
 	}
 	yamlParser := parser.New(fileReader,data.CoreSchema,data.DefaultConstructor,nil)
 	doc, err := yamlParser.ParseDocument()
